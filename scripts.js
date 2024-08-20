@@ -50,7 +50,8 @@ function playRound(userChoice, computerChoice){
         (userChoice === "Paper" && computerChoice === "Rock") ||
         (userChoice === "Scissors" && computerChoice === "Paper"))
     {
-        return "You win! " + userChoice + " beats " + computerChoice;} 
+        return "You win! " + userChoice + " beats " + computerChoice;
+        } 
 
 
         else {
