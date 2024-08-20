@@ -35,8 +35,35 @@ humanInput = humanInput.charAt(0).toUpperCase() + humanInput.slice(1).toLocaleLo
 return humanInput;
 }
 
-let userChoice = getHumanInput();
-console.log("Your Choice: " + userChoice)
 
-let computerChoice = getComputerChoice();
-console.log ("Computer's choice: " + computerChoice)
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(userChoice, computerChoice){
+    if (userChoice === computerChoice) {
+        return "It's a tie!"
+    }
+
+    if (
+        (userChoice === "Rock" && computerChoice === "Scissors") ||
+        (userChoice === "Paper" && computerChoice === "Rock") ||
+        (userChoice === "Scissors" && computerChoice === "Paper"))
+    {
+        return "You win! " + userChoice + " beats " + computerChoice;} 
+
+
+        else {
+        return "You lose! " + computerChoice + " beats " + userChoice;
+    }
+
+
+}
+
+const humanSelection = getHumanInput();
+const computerSelection = getComputerChoice();
+
+const result = playRound(humanSelection, computerSelection);
+console.log("Your Choice: " + humanSelection)
+console.log ("Computer's choice: " + computerSelection)
+console.log(result); 
